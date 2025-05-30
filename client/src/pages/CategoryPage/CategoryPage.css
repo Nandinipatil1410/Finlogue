@@ -1,0 +1,209 @@
+/* CategoryPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.category-container {
+  padding: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color, #f8fafc);
+  min-height: calc(100vh - var(--navbar-height, 72px));
+  margin-top: var(--navbar-height, 72px);
+}
+
+.category-container h2 {
+  color: var(--text-primary, #1e293b);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  text-transform: capitalize;
+}
+
+.category-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color, #4f46e5), var(--primary-hover, #4338ca));
+  border-radius: 4px;
+}
+
+.category-container h3 {
+  color: var(--text-primary, #1e293b);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 2rem 0 1.5rem;
+  text-align: center;
+}
+
+.recharts-wrapper {
+  margin: 0 auto;
+  
+}
+
+.recharts-legend-item-text {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Entries List Styling */
+.entries-list {
+  margin-top: 3rem;
+  background: var(--card-bg, #ffffff);
+  border-radius: var(--border-radius-lg, 16px);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.entry-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  transition: all 0.3s ease;
+}
+
+.entry-item:last-child {
+  border-bottom: none;
+}
+
+.entry-item:hover {
+  background-color: rgba(79, 70, 229, 0.03);
+}
+
+.entry-info {
+  flex: 1;
+}
+
+.entry-name {
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.entry-amount {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.entry-profit {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius, 8px);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary-color, #4f46e5);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover, #4338ca);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.btn-secondary {
+  background: var(--card-bg, #ffffff);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--border-color);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.btn-danger:hover {
+  background: #fee2e2;
+  transform: translateY(-2px);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px dashed var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .category-container {
+    padding: 1.5rem;
+    margin-top: var(--navbar-height-mobile, 64px);
+  }
+  
+  .entry-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .entry-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-container {
+    padding: 1.25rem;
+  }
+  
+  .recharts-wrapper {
+    width: 100% !important;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+:root {
+  --navbar-height: 72px;
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --border-radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
